@@ -5,7 +5,7 @@
 # Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
 
 # Title of your site
-title = "Academic"
+title = "Esthercita"
 
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
@@ -64,3 +64,13 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   category = "categories"
   publication_type = "publication_types"
   author = "authors"
+
+[[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+link = "https://www.linkedin.com/in/estherkukielka/"
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+link = "https://github.com/EKuki"
