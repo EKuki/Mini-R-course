@@ -2,22 +2,21 @@
 date: "2018-09-09T00:00:00Z"
 draft: false
 lastmod: "2018-09-09T00:00:00Z"
-linktitle: An Example Course
+linktitle: R and SNA
 menu:
   example:
     name: Overview
     weight: 1
-summary: Learn how to use Academic's docs layout for publishing online courses, software
-  documentation, and tutorials.
+summary: Short R tutorial to manipulate data and to create social network analysis. Presential course, adapted to become an online tutorial.
 title: Overview
 toc: true
 type: docs
 weight: 1
 ---
 
-## Flexibility
+## Audience
 
-This feature can be used for publishing content such as:
+I created this workshop to capacitate the Healthcare-Associated Infections team at the California Department of Public Health. The main aim was to leave some skills behind on R and Social Network Analysis. The team was proficient in SAS, some were familiar with R and some were not. I put the course together week after week and created code, power poit and video material. Unfortunately, some our video software failed a couple of times, but I usually just following the code and the ppt should do. In the video we go through some extra details, q/a, live troubleshooting and everything you can think could go wrong on an live tutorial. Videos are slow, so feel free to increase the speed and remember to watch in HQ (check youtube options).
 
 * **Online courses**
 * **Project or software documentation**
