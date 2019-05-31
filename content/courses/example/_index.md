@@ -39,7 +39,7 @@ I borrowed plenty of material from several sources. Online references to those a
 ## Structure of the course
 
 * **1.Basics**
- Intro to workshop, R and R studio environment.Objects, data types.
+ Intro to workshop, R and R studio environment. Objects, data types.
 * **2.dplyr** 
  Working directory. Load data from csv. What is a network?
  Packages and libraries: Tidyverse and dplyr. Verbes: select, filter, “pipes”, mutate, * * arrange , split-and-apply, wide and long data.
