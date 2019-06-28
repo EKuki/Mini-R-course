@@ -13,8 +13,6 @@ type: docs
 weight: 2
 ---
 
-# 1.Basics
-
 To write a comment, type `#` before the sentence you want to write.
 Anything to the right of a # in a script will be ignored by R.
 TIP: To comment on a whole paragraph, select the lines you want to comment and press at the same time on your keyboard (Ctrl) + (Shift) + (c).
