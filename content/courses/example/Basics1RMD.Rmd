@@ -12,6 +12,10 @@ type: docs
 weight: 2
 ---
 
+You can read these tutorial asit is, or you can follow along with the video in this [link](https://youtu.be/b7R8Q04jdrU). THe video provides an intro to R and RStudio that is not explained in this website, so if you are really new to R/RStudio, I would recommend you to watch the video.
+
+## How to comment and run code
+
 To write a comment, type `#` before the sentence you want to write.
 Anything to the right of a `#` in a script will be ignored by R.
 
@@ -27,4 +31,43 @@ You can get output in the Console simply by typing math in the script and runnin
 12/2 # Result is 6 
 ```
 
+##  Assign values to objects
+`<-` assigns values on the right to objects on the left.
+> PC: Type `Alt` and `-` at the same time. 
+> Mac: `Option` and `-`
+
+```{r, echo = TRUE}
+weight_kg <- 55    # doesn't print anything, but it has created an object. You can see it in the Environment window, in RStudio.
+(weight_kg <- 55)  # Putting parenthesis around the call prints the value of `weight_kg`
+weight_kg          # and so does typing (or "calling") the name of the object
+```
+
+> Note that R iS cAsE SeNsItIvE!! 
+
+```{r, echo = TRUE}
+weight_KG # Error: object 'weight_KG' not found
+```
+
+You can override an object. Be careful!
+```{r, echo = TRUE}
+weight_kg <- 60 
+weight_kg # If you call wight_kg you see that its value is now 60. You can also see this change in the Environment window.
+```
+
+**C.1.1.Exercise**
+Create an object (a vector) that is half the value of weight_kg (use weight_kg <- 60) called "half_weight_kg"
+
+```{r, echo = TRUE}
+half_weight_kg <- weight_kg / 2
+half_weight_kg
+```
+
+You can give whichever name you want to an object, but it is a good idea to choose something that makes sense. For example:
+
+```{r, echo = TRUE}
+beautiful_day <- weight_kg / 2
+beautiful_day # A bit nonesense...
+half_weight_kg
+```
+> End of exercise
 
