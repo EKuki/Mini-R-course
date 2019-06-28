@@ -25,7 +25,9 @@ organizations:
   url: ""
 role: EIS
 social:
-- icon: linkedin
+- icon: envelope
+  link: '#contact'
+- icon: linkedIn
   icon_pack: fas
   link: 'https://www.linkedin.com/in/estherkukielka/'
 - icon: google-scholar
