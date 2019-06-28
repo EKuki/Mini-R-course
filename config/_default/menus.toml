@@ -21,14 +21,8 @@
 [[main]]
   identifier = "Courses"
   name = "Courses"
-  url = "#courses"
+  url = "courses/"
   weight = 40
-  
-[[menu.courses]]
-  identifier = "Courses"
-  name = "basics-menu"
-  url = "#courses"
-  weight = 45
   
 [[main]]
   name = "Contact"
