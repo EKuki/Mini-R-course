@@ -24,12 +24,6 @@
   url = "courses/"
   weight = 40
   
-[[menu.main]]
-  parent = "Courses"
-  name = "R and SNA"
-  url = "#"
-  weight = 45
-
 [[main]]
   name = "Contact"
   url = "#contact"
