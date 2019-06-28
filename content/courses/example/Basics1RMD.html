@@ -14,6 +14,9 @@ weight: 2
 
 
 
+<p>You can read these tutorial asit is, or you can follow along with the video in this <a href="https://youtu.be/b7R8Q04jdrU">link</a>. THe video provides an intro to R and RStudio that is not explained in this website, so if you are really new to R/RStudio, I would recommend you to watch the video.</p>
+<div id="how-to-comment-and-run-code" class="section level2">
+<h2>How to comment and run code</h2>
 <p>To write a comment, type <code>#</code> before the sentence you want to write.
 Anything to the right of a <code>#</code> in a script will be ignored by R.</p>
 <blockquote>
@@ -30,3 +33,36 @@ Anything to the right of a <code>#</code> in a script will be ignored by R.</p>
 <pre><code>## [1] 8</code></pre>
 <pre class="r"><code>12/2 # Result is 6 </code></pre>
 <pre><code>## [1] 6</code></pre>
+</div>
+<div id="assign-values-to-objects" class="section level2">
+<h2>Assign values to objects</h2>
+<p><code>&lt;-</code> assigns values on the right to objects on the left.
+&gt; PC: Type <code>Alt</code> and <code>-</code> at the same time.
+&gt; Mac: <code>Option</code> and <code>-</code></p>
+<pre class="r"><code>weight_kg &lt;- 55    # doesn&#39;t print anything, but it has created an object. You can see it in the Environment window, in RStudio.
+(weight_kg &lt;- 55)  # Putting parenthesis around the call prints the value of `weight_kg`</code></pre>
+<pre><code>## [1] 55</code></pre>
+<pre class="r"><code>weight_kg          # and so does typing (or &quot;calling&quot;) the name of the object</code></pre>
+<pre><code>## [1] 55</code></pre>
+<blockquote>
+<p>Note that R iS cAsE SeNsItIvE!! Try typing <code>weight_KG</code>. You will see an error like this one <code>Error: object 'weight_KG' not found</code>. Note the capitalizatio of <code>_KG</code>.</p>
+</blockquote>
+<p>You can override an object. Be careful!</p>
+<pre class="r"><code>weight_kg &lt;- 60 
+weight_kg # If you call wight_kg you see that its value is now 60. You can also see this change in the Environment window.</code></pre>
+<pre><code>## [1] 60</code></pre>
+<p><strong>Exercise 1</strong>
+Create an object (a vector) that is half the value of weight_kg (use weight_kg &lt;- 60) called “half_weight_kg”</p>
+<pre class="r"><code>half_weight_kg &lt;- weight_kg / 2
+half_weight_kg</code></pre>
+<pre><code>## [1] 30</code></pre>
+<p>You can give whichever name you want to an object, but it is a good idea to choose something that makes sense. For example:</p>
+<pre class="r"><code>beautiful_day &lt;- weight_kg / 2
+beautiful_day # A bit nonesense...</code></pre>
+<pre><code>## [1] 30</code></pre>
+<pre class="r"><code>half_weight_kg</code></pre>
+<pre><code>## [1] 30</code></pre>
+<blockquote>
+<p>End of Exercise 1</p>
+</blockquote>
+</div>

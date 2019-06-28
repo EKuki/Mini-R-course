@@ -42,11 +42,7 @@ weight_kg <- 55    # doesn't print anything, but it has created an object. You c
 weight_kg          # and so does typing (or "calling") the name of the object
 ```
 
-> Note that R iS cAsE SeNsItIvE!! 
-
-```{r, echo = TRUE}
-weight_KG # Error: object 'weight_KG' not found
-```
+> Note that R iS cAsE SeNsItIvE!! Try typing `weight_KG`. You will see an error like this one `Error: object 'weight_KG' not found`. Note the capitalizatio of `_KG`.
 
 You can override an object. Be careful!
 ```{r, echo = TRUE}
@@ -54,7 +50,7 @@ weight_kg <- 60
 weight_kg # If you call wight_kg you see that its value is now 60. You can also see this change in the Environment window.
 ```
 
-**C.1.1.Exercise**
+**Exercise 1**
 Create an object (a vector) that is half the value of weight_kg (use weight_kg <- 60) called "half_weight_kg"
 
 ```{r, echo = TRUE}
@@ -69,5 +65,5 @@ beautiful_day <- weight_kg / 2
 beautiful_day # A bit nonesense...
 half_weight_kg
 ```
-> End of exercise
+> End of Exercise 1
 
