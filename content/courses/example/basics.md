@@ -5,13 +5,13 @@ lastmod: "2018-09-09T00:00:00Z"
 linktitle: R and SNA
 menu:
   example:
-    name: Overview
+    name: Overview2
     weight: 1
 summary: Short R tutorial to manipulate data and to create social network analysis. Presential course, adapted to become an online tutorial.
-title: Overview
+title: Overview2
 toc: true
 type: docs
-weight: 1
+weight: 2
 ---
 
 ## Audience
