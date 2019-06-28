@@ -22,7 +22,9 @@ TIP: To run: Click anywhere on the line you want to run and either 1) click (Ctr
 If you want to run several lines, highlight them all and do as explained above.
 
 You can get output in the Console simply by typing math in the script and running it:
-```{r}
+```{r, echo = TRUE}
 3+5
 12/2
 ```
+
+
