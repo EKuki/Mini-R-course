@@ -235,3 +235,283 @@ mymatrix</code></pre>
 Remember to follow with the power point corresponding to this <code>1. Basic</code> section!</p>
 </div>
 </div>
+<div id="d.lists" class="section level2">
+<h2>d.Lists</h2>
+<p>This is an example of a list with 4 components: a string, a numeric vector, a matrix, and a scalar :</p>
+<pre class="r"><code>mylist &lt;- list(name=c(&quot;Fred&quot;, &quot;Lola&quot;), mynumbers=a, mymatrix=nb_matrix, age=6.8)
+mylist</code></pre>
+<pre><code>## $name
+## [1] &quot;Fred&quot; &quot;Lola&quot;
+## 
+## $mynumbers
+## [1]  1.0  2.0  5.3  6.0 -2.0  4.0
+## 
+## $mymatrix
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    6   11   16
+## [2,]    2    7   12   17
+## [3,]    3    8   13   18
+## [4,]    4    9   14   19
+## [5,]    5   10   15   20
+## 
+## $age
+## [1] 6.8</code></pre>
+<div id="indexing-a-list" class="section level3">
+<h3>Indexing a list</h3>
+<pre class="r"><code>mylist[[2]] # 2nd component of the list</code></pre>
+<pre><code>## [1]  1.0  2.0  5.3  6.0 -2.0  4.0</code></pre>
+<pre class="r"><code>mylist[[2]][3] # Extract the third element of the 2nd component of the list</code></pre>
+<pre><code>## [1] 5.3</code></pre>
+<p>Other ways to identify observations in a list</p>
+<pre class="r"><code>mylist[[&quot;mynumbers&quot;]] # component named mynumbers in mylist</code></pre>
+<pre><code>## [1]  1.0  2.0  5.3  6.0 -2.0  4.0</code></pre>
+<pre class="r"><code>mylist[[&quot;mynumbers&quot;]][3]</code></pre>
+<pre><code>## [1] 5.3</code></pre>
+</div>
+</div>
+<div id="e.factors" class="section level2">
+<h2>e.Factors:</h2>
+<p>R treats factors as INTEGER vectors, where each integer corresponds to a category, or a level.
+As an example, let’s create the variable gender with 20 “male” entries and 30 “female” entries:</p>
+<pre class="r"><code>gender &lt;- c(rep(&quot;male&quot;,20), rep(&quot;female&quot;, 30)) 
+gender</code></pre>
+<pre><code>##  [1] &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;  
+##  [8] &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;  
+## [15] &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;male&quot;   &quot;female&quot;
+## [22] &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot;
+## [29] &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot;
+## [36] &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot;
+## [43] &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot; &quot;female&quot;
+## [50] &quot;female&quot;</code></pre>
+<pre class="r"><code>class(gender) # `class()` is a function. It tells us what type of data we are dealing with</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>class(mylist)</code></pre>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<pre class="r"><code>gender &lt;- factor(gender) 
+gender</code></pre>
+<pre><code>##  [1] male   male   male   male   male   male   male   male   male   male  
+## [11] male   male   male   male   male   male   male   male   male   male  
+## [21] female female female female female female female female female female
+## [31] female female female female female female female female female female
+## [41] female female female female female female female female female female
+## Levels: female male</code></pre>
+<pre class="r"><code>class(gender)</code></pre>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<pre class="r"><code>levels(gender) # R sorts levels alphabetically</code></pre>
+<pre><code>## [1] &quot;female&quot; &quot;male&quot;</code></pre>
+<p>We can change the order of the levels of a factor by:</p>
+<pre class="r"><code>gender2 &lt;- factor(gender, levels = c(&quot;male&quot;, &quot;female&quot;))
+levels(gender2)</code></pre>
+<pre><code>## [1] &quot;male&quot;   &quot;female&quot;</code></pre>
+<p>We can also change the levels names by renaming the factor labels:</p>
+<pre class="r"><code>gender3 &lt;-factor(gender, labels = c(&quot;red&quot;, &quot;yellow&quot;))
+levels(gender3)</code></pre>
+<pre><code>## [1] &quot;red&quot;    &quot;yellow&quot;</code></pre>
+<blockquote>
+<p>Note that it is very important to maintain the same order as the order of the factor levels! To avoid confusion, you can change the order of the levels AND the names of the labels at the same time:</p>
+</blockquote>
+<pre class="r"><code>gender4 &lt;- factor(gender,
+                  levels = c(&quot;male&quot;, &quot;female&quot;), # make male the first level
+                  labels = c(&quot;hombre&quot;, &quot;mujer&quot;)) # change label male by label hombre
+
+str(gender) # STRUCTURE. original</code></pre>
+<pre><code>##  Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 2 2 2 2 2 2 2 2 2 ...</code></pre>
+<pre class="r"><code>str(gender2) # we changed the order of the levels</code></pre>
+<pre><code>##  Factor w/ 2 levels &quot;male&quot;,&quot;female&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre class="r"><code>str(gender3) # we changed the label of the levels</code></pre>
+<pre><code>##  Factor w/ 2 levels &quot;red&quot;,&quot;yellow&quot;: 2 2 2 2 2 2 2 2 2 2 ...</code></pre>
+<pre class="r"><code>str(gender4) # we changed both the order and the labels of the levels</code></pre>
+<pre><code>##  Factor w/ 2 levels &quot;hombre&quot;,&quot;mujer&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre class="r"><code># R now treats gender as a nominal variable 
+summary(gender)</code></pre>
+<pre><code>## female   male 
+##     30     20</code></pre>
+<p>If we want an ordinal variable, we need to add the argument <code>ordered = TRUE</code>:</p>
+<pre class="r"><code>quality_product &lt;- c(&quot;G&quot;, &quot;B&quot;, &quot;Avg&quot;, &quot;Avg&quot;, &quot;Avg&quot;, &quot;G&quot;, &quot;B&quot;, &quot;G&quot;, &quot;G&quot;, &quot;G&quot;) # G = good, Avg = average, B = bad
+quality_product_f &lt;- factor(quality_product, ordered = TRUE,
+                            levels = c(&quot;B&quot;, &quot;Avg&quot;, &quot;G&quot;)) # Tell R that this is an ordered vector
+quality_product_f # Note that B &lt; Avg &lt; G</code></pre>
+<pre><code>##  [1] G   B   Avg Avg Avg G   B   G   G   G  
+## Levels: B &lt; Avg &lt; G</code></pre>
+<pre class="r"><code>str(quality_product_f)</code></pre>
+<pre><code>##  Ord.factor w/ 3 levels &quot;B&quot;&lt;&quot;Avg&quot;&lt;&quot;G&quot;: 3 1 2 2 2 3 1 3 3 3</code></pre>
+</div>
+<div id="f.functions" class="section level2">
+<h2>f.Functions</h2>
+<pre class="r"><code>family_df</code></pre>
+<pre><code>##     name age
+## 1 Claire  45
+## 2  Pablo  48
+## 3  Anita  10
+## 4  Poppy   7</code></pre>
+<pre class="r"><code>str(family_df) # structure</code></pre>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  2 variables:
+##  $ name: Factor w/ 4 levels &quot;Anita&quot;,&quot;Claire&quot;,..: 2 3 1 4
+##  $ age : num  45 48 10 7</code></pre>
+<pre class="r"><code>      # Wait a second... Why is family a Factor?!
+      # ?data.frame</code></pre>
+<p>Now, run and think a bit about these lines of code:</p>
+<pre class="r"><code>head(family_df, 2) # First 2 rows, all columns</code></pre>
+<pre><code>##     name age
+## 1 Claire  45
+## 2  Pablo  48</code></pre>
+<pre class="r"><code>head(family_df) # By default, head() gives you the first 6 rows, all columns. Our dataset only has 4 rows!</code></pre>
+<pre><code>##     name age
+## 1 Claire  45
+## 2  Pablo  48
+## 3  Anita  10
+## 4  Poppy   7</code></pre>
+<pre class="r"><code>summary(family_df)</code></pre>
+<pre><code>##      name        age       
+##  Anita :1   Min.   : 7.00  
+##  Claire:1   1st Qu.: 9.25  
+##  Pablo :1   Median :27.50  
+##  Poppy :1   Mean   :27.50  
+##             3rd Qu.:45.75  
+##             Max.   :48.00</code></pre>
+<pre class="r"><code>dim(family_df) # dimensions. Rows and columns</code></pre>
+<pre><code>## [1] 4 2</code></pre>
+<p>Try running <code>mean(family_df)</code>. It doesn’t work! I need to specify a column to display!</p>
+<pre class="r"><code>mean(family_df$age)</code></pre>
+<pre><code>## [1] 27.5</code></pre>
+<pre class="r"><code>sum(family_df$age)</code></pre>
+<pre><code>## [1] 110</code></pre>
+<p>Why <em>does</em> this one work?</p>
+<pre class="r"><code>mean(age)</code></pre>
+<pre><code>## [1] 27.5</code></pre>
+<p>Some more functions:</p>
+<pre class="r"><code>heights &lt;- c(2, 4, 4, NA, 6)
+str(heights)</code></pre>
+<pre><code>##  num [1:5] 2 4 4 NA 6</code></pre>
+<pre class="r"><code>summary(heights)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##     2.0     3.5     4.0     4.0     4.5     6.0       1</code></pre>
+<pre class="r"><code>mean(heights) # ??</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>max(heights) # ??</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>mean(heights, na.rm = TRUE) # Remove NA for this arithmetic operation</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>max(heights, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 6</code></pre>
+<div id="do-we-have-missing-values" class="section level3">
+<h3>Do we have missing values?</h3>
+<pre class="r"><code>is.na(heights)</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<pre class="r"><code>summary(is.na(heights))</code></pre>
+<pre><code>##    Mode   FALSE    TRUE 
+## logical       4       1</code></pre>
+<p>Identify location of NAs in vector</p>
+<pre class="r"><code>which(is.na(heights)) # Index, or location, 4 has an NA</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p>Identify count of NAs in data frame</p>
+<pre class="r"><code>sum(is.na(heights)) # We only have one NA</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>Extract those elements which are not missing values.</p>
+<pre class="r"><code>!is.na(heights)  # The operator `!` in R means NO. Thus, !is.na = those that are NOT missing values. Returns logical vector</code></pre>
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE  TRUE</code></pre>
+<pre class="r"><code>heights[!is.na(heights)] # Extract all values from heights that are not missing values</code></pre>
+<pre><code>## [1] 2 4 4 6</code></pre>
+<pre class="r"><code>heights[c(1,2,3,5)]</code></pre>
+<pre><code>## [1] 2 4 4 6</code></pre>
+<p>Extract those elements which are complete cases (case=row).</p>
+<pre class="r"><code>complete.cases(heights) # returns a logical vector indicating which cases are complete. </code></pre>
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE  TRUE</code></pre>
+<pre class="r"><code>heights[complete.cases(heights)]</code></pre>
+<pre><code>## [1] 2 4 4 6</code></pre>
+<pre class="r"><code>!complete.cases(heights) # You can also subset with the `!` operator to get incomplete cases.</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE FALSE</code></pre>
+<pre class="r"><code>heights[!complete.cases(heights)]</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p><strong>Exercise 6</strong>: Create another column for family_df called profession where you give a profession to each family member, except to the dog.
+&gt; Tip: <em>assign</em> a new <em>column</em></p>
+<pre class="r"><code>family_df$profession &lt;- c(&quot;researcher&quot;, &quot;IT&quot;, &quot;student&quot;, NA)</code></pre>
+<p>Retrieve all cases in family_df that don’t have NAs.</p>
+<pre class="r"><code>family_df[complete.cases(family_df), ]</code></pre>
+<pre><code>##     name age profession
+## 1 Claire  45 researcher
+## 2  Pablo  48         IT
+## 3  Anita  10    student</code></pre>
+<blockquote>
+<p>End of Exercise 6</p>
+</blockquote>
+<p>Now, run and think a bit about these lines of code:</p>
+<pre class="r"><code>is.na(family_df)</code></pre>
+<pre><code>##       name   age profession
+## [1,] FALSE FALSE      FALSE
+## [2,] FALSE FALSE      FALSE
+## [3,] FALSE FALSE      FALSE
+## [4,] FALSE FALSE       TRUE</code></pre>
+<pre class="r"><code>is.na(family_df$name)</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>is.na(family_df$profession)</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE</code></pre>
+<pre class="r"><code>colSums(is.na(family_df)) # Compute the total missing values in each colum</code></pre>
+<pre><code>##       name        age profession 
+##          0          0          1</code></pre>
+<p>Another example. Recode missing values with the mean:</p>
+<pre class="r"><code>        x &lt;- c(1:4, NA, 6:7, NA) # vector with missing data
+        x</code></pre>
+<pre><code>## [1]  1  2  3  4 NA  6  7 NA</code></pre>
+<pre class="r"><code>        is.na(x) # Does x have NAs? Yes</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE</code></pre>
+<pre class="r"><code>        which(is.na(x)) # NAs are in positions 5 and 8</code></pre>
+<pre><code>## [1] 5 8</code></pre>
+<pre class="r"><code>        mean(x) # It doesn&#39;t work, why?</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>        mean(x, na.rm = TRUE) # Mean of x, without the NAs</code></pre>
+<pre><code>## [1] 3.833333</code></pre>
+<pre class="r"><code>        x[is.na(x)] # Extract positions 5 and 8 (the TRUE ones) of x</code></pre>
+<pre><code>## [1] NA NA</code></pre>
+<pre class="r"><code>        x[is.na(x)] &lt;- mean(x, na.rm = TRUE) # *assign* `&lt;-` the mean of x to the cells where we have NA values in x
+        round(x, 1) # Round the values of x and give me only 1 decimal point</code></pre>
+<pre><code>## [1] 1.0 2.0 3.0 4.0 3.8 6.0 7.0 3.8</code></pre>
+<pre class="r"><code>        x # x still has a lot of decimal points. Why?</code></pre>
+<pre><code>## [1] 1.000000 2.000000 3.000000 4.000000 3.833333 6.000000 7.000000 3.833333</code></pre>
+<blockquote>
+<p>Note that some people code NA as 99. If you feed these type of data to R, R won’t know those are NAs.</p>
+</blockquote>
+<p>Example of a data frame that codes missing values as 99</p>
+<pre class="r"><code>df &lt;- data.frame(col1 = c(1:3, 99), col2 = c(2.5, 4.2, 99, 3.2))
+df</code></pre>
+<pre><code>##   col1 col2
+## 1    1  2.5
+## 2    2  4.2
+## 3    3 99.0
+## 4   99  3.2</code></pre>
+<p>Change 99s to NAs</p>
+<pre class="r"><code>df[df == 99] &lt;- NA # in the locations that df== 99, insert an NA
+df</code></pre>
+<pre><code>##   col1 col2
+## 1    1  2.5
+## 2    2  4.2
+## 3    3   NA
+## 4   NA  3.2</code></pre>
+<p><strong>Exercise 7</strong>: Create another column for family_df called salary where you give a salary to each family member, except to the dog.</p>
+<pre class="r"><code>family_df$salary &lt;- c(1500, 1350, 23, NA)</code></pre>
+<p>This family loves their dog and they dedicate 1% of their overall mean salary to him. Recode the salary missing value of the dog with 0.01 of the mean of the family’s salary.</p>
+<pre class="r"><code>family_df$salary[is.na(family_df$salary)] &lt;- mean(family_df$salary, na.rm = TRUE) * 0.01
+family_df</code></pre>
+<pre><code>##     name age profession      salary
+## 1 Claire  45 researcher 1500.000000
+## 2  Pablo  48         IT 1350.000000
+## 3  Anita  10    student   23.000000
+## 4  Poppy   7       &lt;NA&gt;    9.576667</code></pre>
+<p>Get incomplete cases with the <code>!</code> operator</p>
+<pre class="r"><code>family_df[!complete.cases(family_df),]</code></pre>
+<pre><code>##    name age profession   salary
+## 4 Poppy   7       &lt;NA&gt; 9.576667</code></pre>
+<blockquote>
+<p>End of Exercise 7</p>
+</blockquote>
+<p>There are some other ocasions when R will return NA (or error, or warning):
+Run these and see what happens
+<code>var (8)</code> # Variance of one number
+<code>as.numeric (c("1", "2", "three", "4"))</code> # Illegal conversion
+<code>c(1, 2, 3)[4]</code> # Vector subscript out of range<br />
+<code>NA - 1</code> # Most operations on NAs produce NAs
+<code>a &lt;- data.frame (a = 1:3, b = 2:4)</code>
+<code>a[4,]</code> # Data frame row subscript out of range. # The first NA in the output is the row number
+<code>a[,4]</code> # Specifying a non-existent column just produces an error</p>
+</div>
+</div>
