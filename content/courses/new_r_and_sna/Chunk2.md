@@ -24,8 +24,8 @@ menu:
 ---
 
 
-In [this video](https://youtu.be/l7jsiDXV4yI) I go along this `1.2` subsection of `1. Basic`.
-Remember to follow with the power point corresponding to this `1. Basic` section!
+In [this video](https://youtu.be/l7jsiDXV4yI) I go along this `Chunk 2` of `1. Basics`.
+Remember to follow with the power point corresponding to this `1. Basics` section!
 
 To "concatenate" two vectors (aka, to put them together) we use `c()`:
 ```{r, echo = TRUE}

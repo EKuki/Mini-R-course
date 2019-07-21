@@ -24,7 +24,7 @@ menu:
 ---
 
 
-[This video](https://youtu.be/b7R8Q04jdrU) provides an intro to R and RStudio that that I am skiping here, so if you are really new to R/RStudio, I would recommend you to watch it. In it, I go along this `1.1` subsection of `1. Basic`.
+[This video](https://youtu.be/b7R8Q04jdrU) provides an intro to R and RStudio that that I am skiping here, so if you are really new to R/RStudio, I would recommend you to watch it. In it, I go along this `Chunck 1` of `1. Basics`.
 
 ## How to comment and run code
 
