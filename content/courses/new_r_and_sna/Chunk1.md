@@ -62,7 +62,9 @@ weight_kg <- 60
 weight_kg # If you call wight_kg you see that its value is now 60. You can also see this change in the Environment window.
 ```
 
-**Exercise 1**: Create an object (a vector) that is half the value of weight_kg (use weight_kg <- 60) called "half_weight_kg"
+**Exercise 1**: 
+
+Create an object (a vector) that is half the value of weight_kg (use weight_kg <- 60) called "half_weight_kg"
 
 ```{r, echo = TRUE}
 half_weight_kg <- weight_kg / 2
