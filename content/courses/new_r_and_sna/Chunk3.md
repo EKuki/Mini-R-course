@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Chunk3"
+title: Chunk 3
 #linktitle: "Chunk3"
 summary:
 date: 2019-07-21T13:05:20-04:00
