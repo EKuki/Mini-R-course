@@ -27,7 +27,7 @@ menu:
 In [this video](https://youtu.be/bxCB1xXBYcA) I go along this `Chunck 3` of `1. Basics`.
 Remember to follow with the power point corresponding to this `1. Basics` section!
 
-## d.Lists
+## **d. Lists**
 This is an example of a list with 4 components: a string, a numeric vector, a matrix, and a scalar :
 ```{r, echo = TRUE}
 mylist <- list(name=c("Fred", "Lola"), mynumbers=a, mymatrix=nb_matrix, age=6.8)
@@ -46,7 +46,7 @@ mylist[["mynumbers"]] # component named mynumbers in mylist
 mylist[["mynumbers"]][3]
 ```
 
-## e.Factors:
+## **e. Factors**:
 R treats factors as INTEGER vectors, where each integer corresponds to a category, or a level.
 As an example, let's create the variable gender with 20 "male" entries and 30 "female" entries:
 ```{r, echo = TRUE}
@@ -99,7 +99,7 @@ quality_product_f # Note that B < Avg < G
 str(quality_product_f)
 ```
 
-## f.Functions
+## **f. Functions**
 
 ```{r, echo = TRUE}
 family_df
@@ -173,7 +173,10 @@ heights[complete.cases(heights)]
 heights[!complete.cases(heights)]
 ```
 
-**Exercise 6**: Create another column for family_df called profession where you give a profession to each family member, except to the dog. 
+**Exercise 6**: 
+
+Create another column for family_df called profession where you give a profession to each family member, except to the dog. 
+
 > Tip: *assign* a new *column*
 
 ```{r, echo = TRUE}
@@ -221,7 +224,9 @@ df[df == 99] <- NA # in the locations that df== 99, insert an NA
 df
 ```
 
-**Exercise 7**: Create another column for family_df called salary where you give a salary to each family member, except to the dog.
+**Exercise 7**: 
+
+Create another column for family_df called salary where you give a salary to each family member, except to the dog.
 ```{r, echo = TRUE}
 family_df$salary <- c(1500, 1350, 23, NA)
 ```
@@ -236,7 +241,6 @@ Get incomplete cases with the `!` operator
 ```{r, echo = TRUE}
 family_df[!complete.cases(family_df),]
 ```
-
 > End of Exercise 7
 
 There are some other ocasions when R will return NA (or error, or warning):
