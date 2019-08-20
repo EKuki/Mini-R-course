@@ -22,4 +22,25 @@ menu:
     weight: 6
 ---
 
-hola dplyr
+Follow along with the [power point presentation](https://github.com/EKuki/website/blob/master/content/courses/new_r_and_sna/2.Dplyr_SNA%20using%20R_25March19.pptx) corresponding to this `2. dplyr` section.
+
+**Learning objectives:**
+
+* What is and how to use your working directory
+* What is a network
+* Load external data from a `.csv` file into a data frame
+* Packages and libraries
+* Get familiar with `tidyverse` and `dplyr`:
+  * `select()`
+  * `filter()`
+  * Pipe `%>%`
+  * `mutate()`
+  * `arrange()`
+  * Split-and-apply: 
+      * `summarize ()`
+      * `group_by()`
+      * `count()`
+  * Wide and long data
+      * `spread()`
+      * `gather()`
+* Export a data frame to a `.csv` file
