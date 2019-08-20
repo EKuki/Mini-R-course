@@ -55,8 +55,3 @@ I borrowed plenty of material from several sources. Online references to those a
 * **4.Network theory with igraph**
  Data needed to create a network
  Network terminology. Important network metrics.
-
-
-## Update the docs menu
-
-If you use the *docs* layout, note that the name of the menu in the front matter should be in the form `[menu.X]` where `X` is the folder name. Hence, if you rename the `courses/example/` folder, you should also rename the menu definitions in the front matter of files within `courses/example/` from `[menu.example]` to `[menu.<NewFolderName>]`.
