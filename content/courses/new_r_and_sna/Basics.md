@@ -23,3 +23,7 @@ menu:
 ---
 
 Follow along with the [power point presentation](https://github.com/EKuki/website/blob/master/content/courses/new_r_and_sna/1.Basics_SNA%20using%20R_18March19.pptx) corresponding to this `1. Basics` section.
+
+**Learning objectives:**
+
+* Getting started!
