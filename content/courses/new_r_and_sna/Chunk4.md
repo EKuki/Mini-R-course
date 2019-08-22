@@ -74,7 +74,7 @@ getwd() # check where you are now
 
 ## **Read a csv file**\
 
-Start by downloading combined data from [here](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) or [here](https://github.com/EKuki/website/blob/master/content/courses/new_r_and_sna/combined.csv)
+Start by downloading combined data from [here](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459),  [here](https://github.com/EKuki/website/blob/master/content/courses/new_r_and_sna/combined.csv), or [here](https://raw.githubusercontent.com/EKuki/website/master/content/courses/new_r_and_sna/combined.csv)
 
 Set your wd. Mine is this one. Yours will be different: 
 ```{r, echo = TRUE}
