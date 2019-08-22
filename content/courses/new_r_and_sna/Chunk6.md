@@ -40,7 +40,7 @@ Let's try them!
 
 With `dplyr`, the first argument you will use is the data you want to work with (in our case, `surveys`):
 
-**1 - Selecting columns and filtering rows**
+## **1 - Selecting columns and filtering rows**
 
 ```{r, echo = TRUE}
 select(surveys, plot_id, species_id, weight)
@@ -94,3 +94,106 @@ print.data.frame(head(select(nodes, latitude, longitude)))
 
 > End of Exercise 1
       
+      
+## **2 - Pipes `%>%`**
+
+What if you want to select and filter at the same time? 
+There are three ways to do this: use intermediate steps, nested functions (both of them already seen above), or pipes.
+        
+**a - Intermediate steps**        
+
+```{r, echo = TRUE}
+surveys2 <- filter(surveys, weight < 5)
+        surveys_int <- select(surveys2, species_id, sex, weight)
+        surveys_int
+```        
+**b - Nested functions**
+```{r, echo = TRUE}
+        surveys_nested <- select(filter(surveys, weight < 5), species_id, sex, weight)
+        surveys_nested
+```
+**c - Pipes**
+A shortcut on your keyboard is: `Cnt` + `Shift` + `M` = `%>%`. When you see a `%>%`, you can read it as "then...". Let's see an example, step by step. I am going to ask R to: 
+
+* Take the data frame surveys,
+* then, filter for rows with weight < 5,
+* then, select columns species_id, sex, and weight.
+
+```{r, echo = TRUE}
+        surveys %>%               # Take the data frame surveys,
+          filter(weight < 5) %>%  # then, filter for rows with weight < 5,
+          select(species_id, sex, weight) # then, select columns species_id, sex, and weight.
+        
+        surveys %>%
+          filter(weight < 5) %>%
+          select(species_id, sex, weight) %>% 
+          print(n=10) # print indicates how many rows I want to print
+```        
+        
+**Exercise 2**:
+
+Using pipes, subset the surveys data to include animals collected before 1995 and retain only the columns year, sex, and weight.
+
+```{r, echo = TRUE}
+surveys %>% 
+  filter(year<1995) %>% 
+  select(year, sex, weight)
+```  
+> End of Exercise 2
+
+**Exercise 3**:
+
+Using pipes, subset the df nodes choosing only the geocoordinates variables of the farm nodes.
+
+```{r, echo = TRUE}
+nodes %>% 
+    filter(premise_type == "farm") %>% 
+    select(latitude, longitude)
+        
+print.data.frame(nodes %>% 
+    filter(premise_type == "farm") %>% 
+    select(latitude, longitude))      
+```
+
+> End of Exercise 3
+
+
+## **3 - Arrange**
+
+Arrange allowes you to rearrange the result of a query to inspect the values. 
+
+```{r, echo = TRUE}
+arrange(surveys, weight) # increasing order
+arrange(surveys, desc(weight)) # decreasing order   
+```
+
+Missing values are always sorted at the end:
+
+```{r, echo = TRUE}
+tail(arrange(surveys, weight)) # increasing order
+tail(arrange(surveys, desc(weight))) # decreasing order
+```
+
+**Exercise 4**
+
+Using pipes and surveys df, create a df ordered by weight (increasing order), with columns `species_id`, `sex`, and `weight`, and where we only have those weight values that are lower than the average weight. Print the first 13 observations.
+
+>TIP: My instructions may or may not correspond with the order in which you need to type the commands. 
+
+>TIP: Remember that some functions need help when dealing with NA        
+
+```{r, echo = TRUE}
+surveys %>%
+  filter(weight < mean(weight, na.rm = TRUE)) %>%
+  arrange(weight) %>% 
+  select(species_id, sex, weight) %>% 
+  print(n=13)
+
+surveys %>% 
+    select(species_id, sex, weight) %>% 
+    filter(weight < mean(weight, na.rm=TRUE)) %>% 
+    arrange(weight) %>% 
+    print(n=13)
+```
+
+> End of Exercise 4
