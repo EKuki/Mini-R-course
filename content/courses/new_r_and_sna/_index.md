@@ -26,7 +26,7 @@ menu:
 
 I created this workshop to capacitate the Healthcare-Associated Infections team at the California Department of Public Health. The main aim was to leave some skills behind on R and Social Network Analysis. The team was proficient in SAS, some were familiar with R and some were not. I put the course together week after week and created `code`, `slides` and `video` material. Unfortunately, our video software failed a couple of times. If you follow the code and the slides you should be OK, though. 
 
-In the video material we go through some extra details, q/a, live troubleshooting and everything you can think could go wrong on an live tutorial. Videos are slow, so feel free to increase the speed and remember to watch in HQ (check youtube options).
+In the video material we go through some extra details, q/a, live troubleshooting and everything you can think could go wrong on a live tutorial. Videos are slow, so feel free to increase the speed and remember to watch in HQ (check youtube options).
 
 ## Credit
 
