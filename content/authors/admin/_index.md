@@ -41,4 +41,4 @@ user_groups:
 - Visitors
 ---
 
-Esther Kukielka will soon start as an Epidemic Intelligence Service Officer (EIS) at the CDC. She will be placed at the National Center for Environmental Health (NCEH), and will be jointly assigned to the Geospatial Research Analysis and Services Program (GRASP) and the Office of Environmental Health Emergency Management (OEHEM). Her supervisors will be Renee Funk, Stephanie Foster and Andy Dent.
+Short intro do be done... at some point.
