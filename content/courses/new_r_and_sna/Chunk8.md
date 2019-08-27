@@ -23,6 +23,15 @@ menu:
 
 ## **Plotting networks**
 
+There are a several ways to plot networks in R. We are going to be using ggplot2 at its simplest, however, feel free to explore others:
+
+* `ggplot2` package
+* `GGally` package::ggnet2() 
+* `geomnet` package::geom_net(): Wraps all network structures, including vertices, edges, and vertex labels into a single geom
+* `ggnetwork` package: provides a way to build network plots with `ggplot2` using `geom_nodes()` and `geom_edges()`: Implements each of the network structures in an independent `geom_` and layers them one by one
+
+## **Getting the map**
+
 We will need a map (a shapefile) that we can upload into R. [Diva-gis](https://www.diva-gis.org/) has many shapefiles that you can download for free. That is what I did to obtain my Thailand map. 
 
 You can find yours through [diva's website](https://www.diva-gis.org/gdata) or [here](https://github.com/EKuki/website/tree/master/content/courses/new_r_and_sna/THA_adm). Remmeber to save the *THA_adm folder* in your working directory.
@@ -44,6 +53,8 @@ base_map <- ggplot() +
 base_map
 ```
 
+## **Adding the nodes**
+
 Add the `nodes` (those are just points, so use `geom_point`):
 
 ```{r, echo = TRUE}
@@ -61,6 +72,7 @@ base_map +
              size = 3)+
   scale_colour_discrete(name = "Scale type")
 ```
+## **Adding the edges**
 
 Add the `edges`. Place edges before the nodes, so their image does not overlap:
 
@@ -86,6 +98,7 @@ base_map +
              size = 3)+
   scale_colour_discrete( name = "Scale type")
 ```
+## **Embelishing it**
 
 Change the size of the `nodes` according to `indegree` => I need a network to calculate indegree! Let's create a quick network  (we'll go in more detail on how to do this in another workshop)
 
