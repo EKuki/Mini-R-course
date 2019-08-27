@@ -48,7 +48,7 @@ I borrowed plenty of material from several sources. Online references to those a
  Intro to workshop, R and R studio environment. Objects, data types.
 * **2.dplyr** 
  Working directory. Load data from csv. What is a network?
- Packages and libraries: Tidyverse and dplyr. Verbes: select, filter, “pipes”, mutate, * * arrange , split-and-apply, wide and long data.
+ Packages and libraries: Tidyverse and dplyr. Verbes: select, filter, “pipes”, mutate, arrange , split-and-apply, wide and long data.
 * **3.Map with ggplot**
  Components of a ggplot object. 
  Plotting networks.
